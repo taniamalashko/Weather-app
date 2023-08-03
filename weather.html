@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanos-Weather</title>
+    <link rel="stylesheet" href="./css/weather.css">
+</head>
+<body>
+    <div class="wrapp">
+        <div class="container">
+            <div class="header">
+                <div class="header__left" data-unit="c">
+                    <img src="img/home.png" alt="to main page" id="btnToMainPage">
+                    <img src="img/geo.png" alt="allow location access" id="allowLocationAccess">
+                    <div class="temperature-unit__container">
+                        <div class="temperature-unit">
+                            <span>F°</span>
+                            <div class="switch-btn switch-on"></div>
+                            <span>C°</span>
+                        </div>
+                    </div>
+                    <div id="show-7days__button">Show 7 days</div>
+                    <div id="show-14days__button">Show 14 days</div>
+                    <div class="header__geo"><span class="header__geo-name"></span></div>
+                </div>
+                <div class="header__right">
+                    <input type="text" id="searchCityInput">
+                    <ul id="cityResultsList">
+                    </ul>
+                </div>
+            </div>
+            <div class="sort-panel display__none">
+                <span class="sort-panel__label">Sort by:</span>
+                <input type="button" class="sort-panel__button" value="From the hottest day to the coldest">
+                <input type="button" class="sort-panel__button" value="From the coldest day to the hottest">
+                <input type="button" class="sort-panel__button checked" value="By days">
+            </div>
+            <div class="current-weather">
+                <div class="current-weather__header"></div>
+                <div class="current-weather__body">
+                    <div class="current-weather__body-left">
+                        <div class="current-weather__temperature"></div>
+                        <div class="current-weather__cloudiness"></div>
+                        <div class="current-weather__feels-like"></div>
+                    </div>
+                    <div class="current-weather__body-right">
+                        <div class="current-weather__wind-humidity">
+                            <div class="current-weather__wind-section">
+                                <div class="current-weather__wind-title">Wind speed:</div>
+                                <span class="current-weather__wind"></span>
+                            </div>
+                            <div class="current-weather__humidity-section">
+                                <div class="current-weather__humidity-title">Humidity:</div>
+                                <span class="current-weather__humidity"></span>
+                            </div>
+                        </div>
+                        <div class="current-weather__img-container">
+                            <img src="#" alt="weather icon" class="current-weather__icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hours-weather ">
+                <ul class="hours-weather__list">
+
+                </ul>
+            </div>
+            <div class="seven-days-weather display__none">
+                <div class="seven-days-weather__week">
+                    <ul class="seven-days-weather__list">
+                    </ul>
+                </div>
+            </div>
+            <div class="future-days-weather display__none">
+                <div class="future-days-weather__week">
+                    <ul class="future-days-weather__list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="error-message__container display__none">
+            <div class="error-message">
+                <div class="message"><span class="message-span"></span></div>
+                <div class="retry">
+                    <button class="retry-btn">retry</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="weather.js"></script>
+</body>
+</html>
