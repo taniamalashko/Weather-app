@@ -197,7 +197,7 @@ function controller(url){
 }
 
 //Determination of location by IP address
-/*controller('http://ipwho.is/')
+controller('https://ipwho.is/')
     .then(data => {
         USER_GEO_INFO.latitude = data.latitude;
         USER_GEO_INFO.longitude = data.longitude;
@@ -214,7 +214,7 @@ function controller(url){
         errorMessageDiv.retryBtn.addEventListener('click', () => {
             location.reload();
         });
-    });*/
+    });
 
 //Determination of more precise coordinates with the permission of the user
 document.querySelector('#allowLocationAccess').addEventListener('click', () => {
@@ -245,7 +245,7 @@ header.searchCityInput.addEventListener('input', () => {
     const cityResult = searchCityInput.value.trim();
 
     if (cityResult !== '') {
-        controller(`http://api.openweathermap.org/geo/1.0/direct?q=${cityResult}&limit=5&appid=c604670d7f61f9cf793fc7f602b7ce96`)
+        controller(`https://api.openweathermap.org/geo/1.0/direct?q=${cityResult}&limit=5&appid=c604670d7f61f9cf793fc7f602b7ce96`)
         .then(data => {
             data.forEach(city => {
                 renderCityLI(city);
@@ -291,7 +291,7 @@ function renderCityLI(city){
 function getCurrentWeather(lat, lon){
     const q = `${lat}, ${lon}`;
 
-    controller(`http://api.weatherapi.com/v1/current.json?key=fb8d5b4b690d42c3b1e141239233007&q=${q}`)
+    controller(`https://api.weatherapi.com/v1/current.json?key=fb8d5b4b690d42c3b1e141239233007&q=${q}`)
         .then(data => {
             renderCurrentWeather(data);
         })
@@ -333,7 +333,7 @@ function getTodayWeatherHourly(lat, lon){
     const q = `${lat}, ${lon}`;
     todayWeatherHourlyDiv.ul.innerHTML = '';
 
-    controller(`http://api.weatherapi.com/v1/forecast.json?key=fb8d5b4b690d42c3b1e141239233007&q=${q}&days=1`)
+    controller(`https://api.weatherapi.com/v1/forecast.json?key=fb8d5b4b690d42c3b1e141239233007&q=${q}&days=1`)
         .then(data => {
             const hours = data.forecast.forecastday[0].hour;
             console.log(hours);
@@ -466,7 +466,7 @@ function getForecastInfo(lat, lon, daysSum){
     const q = `${lat}, ${lon}`;
     futureDaysWeatherDiv.list.innerHTML = '';
 
-    controller(`http://api.weatherapi.com/v1/forecast.json?key=fb8d5b4b690d42c3b1e141239233007&q=${q}&days=${daysSum}`)
+    controller(`https://api.weatherapi.com/v1/forecast.json?key=fb8d5b4b690d42c3b1e141239233007&q=${q}&days=${daysSum}`)
         .then(data => {
             const days = data.forecast.forecastday;
 
