@@ -197,7 +197,7 @@ function controller(url){
 }
 
 //Determination of location by IP address
-controller('http://ipwho.is/')
+/*controller('http://ipwho.is/')
     .then(data => {
         USER_GEO_INFO.latitude = data.latitude;
         USER_GEO_INFO.longitude = data.longitude;
@@ -214,7 +214,7 @@ controller('http://ipwho.is/')
         errorMessageDiv.retryBtn.addEventListener('click', () => {
             location.reload();
         });
-    });
+    });*/
 
 //Determination of more precise coordinates with the permission of the user
 document.querySelector('#allowLocationAccess').addEventListener('click', () => {
