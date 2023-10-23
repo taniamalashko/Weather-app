@@ -1,2 +1,2 @@
 # Weather-app
-Weather app from Tanusha
+Weather app on vanilla js
