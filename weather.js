@@ -335,7 +335,6 @@ function getTodayWeatherHourly(lat, lon){
     controller(`https://api.weatherapi.com/v1/forecast.json?key=fb8d5b4b690d42c3b1e141239233007&q=${q}&days=1`)
         .then(data => {
             const hours = data.forecast.forecastday[0].hour;
-            console.log(hours);
 
             hours.forEach(hour => {
                 todayWeatherHourlyDiv.ul.append(renderHourWeatherItem(hour));
