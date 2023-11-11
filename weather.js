@@ -131,7 +131,6 @@ const header = {
     searchCityInput: document.querySelector('#searchCityInput'),
     cityResultsList: document.querySelector('#cityResultsList'),
     show7DaysBtn: document.querySelector('#show-7days__button'),
-    show14DaysBtn: document.querySelector('#show-14days__button'),
     btnToMainPage: document.querySelector('#btnToMainPage'),
     geoName: document.querySelector('.header__geo-name'),
     dateInput: document.querySelector('#dateFilterInput'),
@@ -624,18 +623,6 @@ header.show7DaysBtn.addEventListener('click', () => {
     sortingPanel.panel.classList.remove('display__none');
 
     FORECAST_DAYS = 7;
-
-    getForecastInfo(USER_GEO_INFO.latitude, USER_GEO_INFO.longitude, FORECAST_DAYS);
-});
-
-header.show14DaysBtn.addEventListener('click', () => {
-
-    currentWeatherDiv.div.classList.add('display__none');
-    todayWeatherHourlyDiv.div.classList.add('display__none');
-    futureDaysWeatherDiv.div.classList.remove('display__none');
-    sortingPanel.panel.classList.remove('display__none');
-
-    FORECAST_DAYS = 14;
 
     getForecastInfo(USER_GEO_INFO.latitude, USER_GEO_INFO.longitude, FORECAST_DAYS);
 });
