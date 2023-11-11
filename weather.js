@@ -592,7 +592,7 @@ function renderMoreDayInfo(day){
     const moonphase = day.astro.moon_phase;
     const moonphaseImg = MOON_ICONS[moonphase];
 
-    humiditySpan.innerHTML = `<img src="img/drop.png" alt="drop icon"> Humidity:<br><b>${humidity}%</b>`;
+    humiditySpan.innerHTML = `<img src="img/drop.png" alt="drop icon"> Humidity:<br><b>${humidity}</b>`;
     uvSpan.innerHTML = `<img src="img/sun.png" alt="sun icon"> UV:<br><b>${uv}</b>`;
     sunriseSpan.innerHTML = `<img src="img/sunrise.png" alt="sunrise icon"> Sunrise:<br><b>${sunrise}</b>`;
     sunsetSpan.innerHTML = `<img src="img/sunset.png" alt="sunset icon"> Sunset:<br><b>${sunset}</b>`;
